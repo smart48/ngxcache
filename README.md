@@ -1,18 +1,35 @@
-# Nginx Cache Controller for Laravel 4
+# Nginx Cache Controller for Laravel 8
 
-[日本語ドキュメントはコチラ](http://www.geeks-dev.com/laravel%E3%81%A7nginx%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8Bngxcache/)
-
+Based on GeeksDev NgxCache
 ## Installation
 
-Add `geeks-dev/ngxcache` as a requirement to composer.json.
+Add this repository as a VCS package to composer.json.
 
-	{
-		"require": {
-			"geeks-dev/ngxcache": "dev-master"
-		}
-	}
+```
+	"repositories": [
+        ....
+				{
+            "type": "vcs",
+            "url": "git@github.com:smart48/ngxcache.git"
+        },
+        ....
+    ],
+```
 
-Update your packages with composer update or install with composer install.
+And under require add your package
+
+```
+"require": {
+    .....
+    "smart48/ngxcache": "dev-master",
+```
+
+This way you use our updated package and not the outdated Geeks Dev package `geeks-dev/ngxcache`.
+
+
+Update your packages with `composer update` or install with `composer install`.
+
+**NB** see [Composer document on VCS](https://getcomposer.org/doc/05-repositories.md#vcs)
 
 Once Ngxcache is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
 
